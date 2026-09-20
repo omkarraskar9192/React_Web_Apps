@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Outfit", sans-serif;
+  --font-serif: "Space Grotesk", "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 min-w-80 bg-[#f0f8fb] dark:bg-[#050e14] font-sans text-[#0a2330] dark:text-[#dcf2f9] antialiased transition-colors duration-300;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, .font-brand {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+/* Animations */
+@keyframes pulseSubtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes voiceWave {
+  0%, 100% { height: 6px; }
+  50% { height: 26px; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aquaGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 229, 255, 0.25); }
+  50% { box-shadow: 0 0 25px rgba(0, 229, 255, 0.45); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite ease-in-out;
+}
+
+.animate-aqua-glow {
+  animation: aquaGlow 2.5s infinite ease-in-out;
+}
+
+.voice-wave-bar {
+  animation: voiceWave 1s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.55);
+}

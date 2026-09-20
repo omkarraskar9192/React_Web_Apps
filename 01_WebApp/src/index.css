@@ -1,1 +1,69 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+/* Ensure root, html, and body always respect the active theme on all devices */
+html {
+  height: 100%;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  flex: 1 1 auto;
+  min-height: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Smooth Celestial Theme Transitions */
+.theme-container,
+.theme-container header,
+.theme-container footer,
+.theme-container section,
+.theme-container div,
+.theme-container nav {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= DARK THEME (OBSIDIAN / COSMIC NIGHT) ================= */
+html.dark,
+html.dark body,
+html.dark #root,
+.dark-theme {
+  background-color: #030712 !important;
+  color: #f8fafc !important;
+}
+
+/* ================= LIGHT THEME (PURE WHITE / SOLAR ILLUMINATION) ================= */
+html.light,
+html.light body,
+html.light #root,
+.light-theme {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* 3D Solar Canvas Frame in Light Mode preserves dark cosmic canvas interior */
+.light-theme .solar-canvas-frame {
+  background-color: #080d1a !important;
+  border-color: rgba(203, 213, 225, 0.9) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12) !important;
+}
