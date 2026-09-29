@@ -22,6 +22,8 @@ import { setAuthToken } from '../services/api'
 import { subscribeSyncStatus } from '../services/syncEngine'
 import BrandLogo from './BrandLogo'
 
+
+
 export default function Topbar() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
