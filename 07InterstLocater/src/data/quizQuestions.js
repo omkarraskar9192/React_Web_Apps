@@ -40,6 +40,7 @@ export const quizQuestions = [
   }
 ];
 
+
 export const categoryRecommendations = {
   'Tech & Coding': {
     title: 'Digital Architect & Builder',
